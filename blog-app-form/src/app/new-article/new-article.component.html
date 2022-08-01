@@ -19,7 +19,7 @@
             <input id="date" type="date" formControlName="date">
         </div>
         <div class="action-buttons">
-            <button type="submit" (click)="onSubmitForm()" [disabled]="articleForm.invalid">Enregistrer</button>
+            <button  type="submit" (click)="onSubmitForm()" [disabled]="articleForm.invalid">Enregistrer</button>
         </div>
     
     </form>
@@ -29,5 +29,4 @@
     <p><strong> Contenu </strong>{{ article.description }}</p>
     <p> <strong>Rédiger par </strong>{{ article.auteur }}</p>
     <p> <strong>Mis en ligne le </strong> {{ article.date | date: 'd MMMM yyyy'}}</p>
-   
 </div>

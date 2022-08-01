@@ -23,6 +23,8 @@
   }
   
   button {
+    color: azure;
+    background-color: rgb(9, 61, 139);
     display: block;
     margin: 20px auto;
   }

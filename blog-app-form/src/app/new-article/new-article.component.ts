@@ -1,8 +1,8 @@
 import { Blog } from './../blog.model';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup ,Validators} from '@angular/forms';
+import { FormBuilder, FormGroup ,Validators, ValidatorFn, AbstractControl,ValidationErrors} from '@angular/forms';
 import { Observable } from 'rxjs';
-import { map, min } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { BlogService} from 'src/app/blog.service'
 import { Router } from '@angular/router';
 
@@ -22,7 +22,7 @@ export class NewArticleComponent implements OnInit {
       title: [null , [Validators.required]],
       description: [null, [Validators.required]],
       auteur: [null, [Validators.required]],
-      date: [null]
+      date: [new Date(), [this.dateValidator()]]
   },
   {
     updateOn: 'blur'
@@ -40,5 +40,23 @@ export class NewArticleComponent implements OnInit {
     this.blogService.addArticle(this.articleForm.value);
     this.router.navigateByUrl('/article');
 }
+
+dateValidator(): ValidatorFn {
+  return (control: AbstractControl): {[key: string]: any} | null => {
+    const today = new Date().getTime();
+
+    if(!(control && control.value)) {
+      // if there's no control or no value, that's ok
+      return null;
+    }
+
+    // return null if there's no errors
+    return control.value.getTime() < today 
+      ? {invalidDate: 'Priere de mettre une date postérieur à aujourd hui '} 
+      :null;
+       ;
+  }
+}
+
 
 }

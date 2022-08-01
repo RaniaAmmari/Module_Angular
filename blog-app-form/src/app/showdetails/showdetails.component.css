@@ -22,3 +22,33 @@ span{
 #comments_title{
     margin-top: 20px;
 }
+.form-card , .face-snap-card{
+    box-sizing: border-box;
+    width: 50%;
+    margin: 20px auto;
+    padding: 10px 30px;
+    box-shadow: rgb(240, 233, 233) 4px 4px 20px;
+  }
+  
+  .form-group {
+    margin: 10px auto;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  input, textarea {
+    width: 50%;
+  }
+  
+  .action-buttons {
+    width: 100%;
+  }
+  
+  button {
+    color: azure;
+    background-color: rgb(9, 61, 139);
+    display: block;
+    margin: 20px auto;
+  }
