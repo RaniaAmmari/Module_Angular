@@ -1,0 +1,24 @@
+#article_detail{
+    width: 40%;
+    margin: 20px auto 0;
+}
+
+span{
+    font-size: 16px;
+}
+
+.comment_item{
+    background-color: rgb(181, 188, 209);
+    padding: 10px 0 10px 20px;
+    color: rgb(9, 61, 139);
+}
+
+#comments{
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#comments_title{
+    margin-top: 20px;
+}

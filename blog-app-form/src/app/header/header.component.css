@@ -1,0 +1,17 @@
+header {
+    text-align: center;
+    background-color: rgb(181, 188, 209);
+    margin-bottom: 20px;
+    padding: 10px;}
+    
+  a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: blue;
+    size: 18;
+  }
+  
+  .active {
+    color: #666;
+    text-decoration: underline;
+  }
