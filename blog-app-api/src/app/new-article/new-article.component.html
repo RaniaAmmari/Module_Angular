@@ -1,6 +1,6 @@
 <div class="form-card">
     <h2>NOUVEl ARTICLE</h2>
-    <form [formGroup]="articleForm">
+    <form [formGroup]="articleForm" >
         <div class="form-group">
             <label for="title">Titre</label>
             <input id="title" type="text" formControlName="title">
@@ -12,11 +12,11 @@
         </div>
         <div class="form-group">
             <label for="autor">Auteur</label>
-            <input id="autor" type="text" formControlName="autor">
+            <input id="autor" type="text" formControlName="autor" >
         </div>
         <div class="form-group">
             <label for="date" >Date</label>
-            <span *ngIf="articleForm.controls['date'].errors?.['invalidDate']&& (articleForm.controls['date'].dirty || articleForm.controls['date'].touched)" style="color: red;"> {{articleForm.controls['date'].errors?.['invalidDate']}}
+            <span *ngIf="articleForm.controls['date'].errors?.['invalidDate'] && (articleForm.controls['date'].dirty || articleForm.controls['date'].touched)" style="color: red;"> {{articleForm.controls['date'].errors?.['invalidDate']}}
             </span>
             <input type="date"  class="form-control" formControlName="date">
             

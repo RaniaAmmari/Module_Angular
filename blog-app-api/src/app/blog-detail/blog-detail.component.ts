@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class BlogDetailComponent implements OnInit {
  
   articles$!: Observable<Blog[]>;
+  
 
   constructor(private blogService:BlogService,private router: Router) { }
 

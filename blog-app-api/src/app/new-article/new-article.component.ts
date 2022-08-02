@@ -37,7 +37,7 @@ export class NewArticleComponent implements OnInit {
   );
   }
   onSubmitForm() {
-    this.blogService.addArticle(this.articleForm.value);
+    this.blogService.addArticle(this.articleForm.value).subscribe();
     this.router.navigateByUrl('/article');
 }
 
