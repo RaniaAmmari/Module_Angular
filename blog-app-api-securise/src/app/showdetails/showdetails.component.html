@@ -1,0 +1,37 @@
+<div id="article_detail" *ngIf="article$ | async as article" >
+    <h3> Auteur :<span > {{article.autor}} </span> </h3>
+    <h3> Date de publication : <span> {{ article.date | date: 'dd/MM/yyyy' }} </span> </h3>
+    <h3 *ngIf = "article.commentaires" id="comments_title">Commentaires : </h3>
+    <div id="comments">
+        <div *ngFor="let commentaire of article.commentaires" class="comment_item">
+            <strong> {{commentaire.content}}</strong>
+            <div>       
+     <p> Publié par <strong> :{{commentaire.autor}}</strong> </p>
+     <p>  Le : <strong> {{commentaire.date | date: 'dd/MM/yyyy' }} </strong> </p>     
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary" (click)=" onViewDetails()">Retour </button>
+ 
+</div>
+<div class="form-card">
+    <h2>Ajouter un Commentaire</h2>
+    <form [formGroup]="commentForm">
+        <div class="form-group">
+            <label for="content">Contenu</label>
+            <textarea id="content" type="text" formControlName="content" rows="4">
+            </textarea>
+        </div>
+        <div class="form-group">
+            <label for="autor">Auteur</label>
+            <input id="autor" type="text" formControlName="autor">
+        </div>
+        <div class="form-group">
+            <label for="date">Date</label>
+            <input id="date" type="date" formControlName="date">
+        </div>
+        <div class="action-buttons">
+            <button  type="submit" (click)="onSubmitForm()" [disabled]="commentForm.invalid">Enregistrer</button>
+        </div>
+    
+    </form>

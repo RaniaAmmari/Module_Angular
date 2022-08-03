@@ -1,0 +1,5 @@
+
+<div id="listing">
+    <button class="btn btn-primary" (click)="onAddNewArticle()"> Ajouter +</button>
+    <app-blog *ngFor="let article of articles$ | async" [article]="article"></app-blog>
+</div>

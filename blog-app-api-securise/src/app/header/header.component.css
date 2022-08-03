@@ -1,0 +1,25 @@
+header {
+    text-align: center;
+    background-color: rgb(181, 188, 209);
+    margin-bottom: 20px;
+    padding: 10px;}
+    
+  a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: rgba(15, 98, 131, 0.753);
+    size: 18;
+  }
+  
+  .active {
+    color: #666;
+    text-decoration: underline;
+  
+  }
+  button {
+    color: azure;
+    background-color: rgb(4, 79, 192);
+    display: inline-block;
+    margin: 20px 20px;
+    
+  }
