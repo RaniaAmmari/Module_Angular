@@ -1,8 +1,8 @@
 import { FormGroup } from '@angular/forms';
-import { Commentaire } from 'src/app/commentaire.model';
+import { Commentaire } from 'src/app/core/models/commentaire.model';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { Blog } from 'src/app/blog.model';
+import { Blog } from 'src/app/core/models/blog.model';
 import { HttpClient } from '@angular/common/http'
 import { map } from 'rxjs/operators';
 

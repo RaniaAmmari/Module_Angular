@@ -1,0 +1,15 @@
+<header>
+    <h1>Welcome On Board </h1>
+    <nav>
+      <a routerLink="">Home</a>
+      <a routerLink="article"  routerLinkActive="active">Articles</a>
+          <div class="nav-item">
+            <a class="nav-link" routerLink="login" *ngIf="!isLoggedIn()"> Connexion </a>
+          </div>
+          <div class="nav-item">
+            <a class="nav-link" routerLink="login" *ngIf="isLoggedIn()" (click)="onLogout()"> Déconnexion </a>
+          </div>
+       
+    </nav>
+
+     </header>

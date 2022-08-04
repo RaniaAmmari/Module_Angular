@@ -1,4 +1,4 @@
-import { Commentaire } from "src/app/commentaire.model";
+import { Commentaire } from "src/app/core/models/commentaire.model";
 export class Blog {
     id!:number;
     title!:string;

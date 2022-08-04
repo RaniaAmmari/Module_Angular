@@ -1,9 +1,9 @@
-import { Blog } from './../blog.model';
+import { Blog } from '../../../core/models/blog.model';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup ,Validators, ValidatorFn, AbstractControl,ValidationErrors} from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { BlogService} from 'src/app/services/blog.service'
+import { BlogService} from 'src/app/core/services/blog.service'
 import { Router } from '@angular/router';
 
 @Component({

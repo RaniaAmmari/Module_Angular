@@ -1,25 +1,24 @@
-import { UserlogComponent } from './userlog/userlog.component';
-import { NewArticleComponent } from './new-article/new-article.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BlogDetailComponent } from './blog-detail/blog-detail.component';
-import { ShowdetailsComponent } from './showdetails/showdetails.component';
-
-
+import { UserlogComponent } from './userlog/userlog.component';
 
 
 const routes: Routes = [
-  { path: 'article', component: BlogDetailComponent },
+  { path: 'login', component: UserlogComponent},
+  { path: 'article', loadChildren: () => import('./articles/articles.module').then(m => m.ArticlesModule) },
   { path: '', component: LandingPageComponent },
-  { path:'articles/:id' , component: ShowdetailsComponent },
-  { path: 'create', component: NewArticleComponent },
-  { path: 'login', component: UserlogComponent }
+
+
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes),
+    RouterModule.forChild(routes)
+  ],
+  exports: [
+    RouterModule
+  ]
 })
 export class AppRoutingModule { }

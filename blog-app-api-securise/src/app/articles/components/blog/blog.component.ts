@@ -1,5 +1,5 @@
 import { Component, OnInit , Input} from '@angular/core';
-import { Blog } from 'src/app/blog.model';
+import { Blog } from 'src/app/core/models/blog.model';
 import { Router } from '@angular/router';
 
 
@@ -16,7 +16,7 @@ export class BlogComponent implements OnInit {
   
 }
 onViewArticle(): void {
-  this.router.navigateByUrl(`articles/${this.article.id}`);
+  this.router.navigateByUrl(`article/${this.article.id}`);
 }
 
 }

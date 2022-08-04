@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BlogService } from 'src/app/services/blog.service';
-import { Blog } from 'src/app/blog.model';
+import { BlogService } from 'src/app/core/services/blog.service';
+import { Blog } from 'src/app/core/models/blog.model';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -45,12 +45,12 @@ export class ShowdetailsComponent implements OnInit {
     
   }
   onViewComment(): void {
-    this.router.navigateByUrl('articles/:id');
+    this.router.navigateByUrl('article:id');
   }
   onSubmitForm() {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.blogService.addArticle(this.commentForm.value);
-    this.router.navigateByUrl('article');
+    this.router.navigateByUrl('/article');
     
 }
 

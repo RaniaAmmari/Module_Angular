@@ -1,17 +1,14 @@
 import { FormGroup } from '@angular/forms';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
-
-
+import{ JwtHelperService } from '@auth0/angular-jwt'
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
     
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, public jwtHelper: JwtHelperService) {}
   
   login(userForm :FormGroup) {
      this.http.post('http://127.0.0.1:8000/api/login_check',userForm)
@@ -23,4 +20,9 @@ export class AuthService {
             })
         ;
 }
+public isAuthenticated(): boolean {
+  let jwt = JSON.parse(localStorage.getItem('jwt') || '{}');
+  return !this.jwtHelper.isTokenExpired(jwt.token);
+}
+
 }
